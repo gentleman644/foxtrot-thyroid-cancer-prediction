@@ -3,7 +3,7 @@
 class TestMethods():
     """
         Description: This class contains unit test for all cells in the notebook.
-        Author: Tim Liu    
+        Author: Tim Liu
     """
 
     def test_load_data(dataSet):
@@ -16,4 +16,10 @@ class TestMethods():
         assert dataset is not None, "Data set should not be None"
         for col in dataset.dtypes.values:
             assert col in ['int64', 'float64'], "All columns should be numeric after encoding"
+
+    def test_target_class_imbalance(target_column):
+        assert target_column is not None, "Target column should not be None"
+        target_series = target_column.value_counts()
+        assert target_series.min() > 0, "Each class should have at least one instance"
+        assert target_series.max() / target_series.min() == 1, "Classes should be balanced"
     
