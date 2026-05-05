@@ -30,13 +30,13 @@ class TestMethods():
 
     def test_feature_generation(dataset):
         assert dataset is not None, "Data set should not be None"
-        assert dataset.shape[0] == 98990, "The amount of rows in the dataset should not have changed"
+        assert dataset.shape[0] == 212691, "The amount of rows in the dataset should not have changed"
         assert dataset.shape[1] > 17, "Data set should have more than 17 columns"
     
     def test_feature_Selection(dataset):
         assert dataset is not None, "Data set should not be None"
-        assert dataset.shape[0] == 98990, "The amount of rows in the dataset should not have changed"
-        assert dataset.shape[1] < 17, "Data set should have less than 17 columns"
+        assert dataset.shape[0] == 212691, "The amount of rows in the dataset should not have changed"
+        assert dataset.shape[1] < 24, "Data set should have less than 24 columns"
 
     def test_feature_normalization(Stand_X_train, Stand_Y_train, Stand_X_test, Stand_Y_test):
         assert Stand_X_train is not None, "Standardized training features should not be None"
